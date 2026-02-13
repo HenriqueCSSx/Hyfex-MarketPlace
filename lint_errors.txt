@@ -1,0 +1,177 @@
+﻿
+> vite_react_shadcn_ts@0.0.0 lint
+> eslint .
+
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ImageCropper.tsx
+  23:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  34:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  34:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ProductQuestions.tsx
+  35:8  warning  React Hook useEffect has a missing dependency: 'loadQuestions'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\SellerActivationBanner.tsx
+  65:55  error    Unexpected any. Specify a different type                                                                         @typescript-eslint/no-explicit-any
+  83:8   warning  React Hook useEffect has a missing dependency: 'loadMessages'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\SellerDisputesDashboard.tsx
+  18:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  20:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  35:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ui\badge.tsx
+  29:17  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ui\button.tsx
+  47:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ui\command.tsx
+  24:11  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ui\form.tsx
+  129:10  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ui\navigation-menu.tsx
+  111:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ui\sidebar.tsx
+  636:3  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ui\sonner.tsx
+  27:19  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ui\textarea.tsx
+  5:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\components\ui\toggle.tsx
+  37:18  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\contexts\AuthContext.tsx
+   43:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+   49:26  error    Unexpected any. Specify a different type                                                                                        @typescript-eslint/no-explicit-any
+  195:14  error    Unexpected any. Specify a different type                                                                                        @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\contexts\NotificationContext.tsx
+   71:25  error    Empty block statement                                                                                                                no-empty
+   91:6   warning  React Hook useEffect has missing dependencies: 'fetchNotifications' and 'toast'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  127:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components       react-refresh/only-export-components
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\contexts\NotificationsContext.tsx
+   63:37  error    Empty block statement                                                                                                                no-empty
+   74:8   warning  React Hook useEffect has missing dependencies: 'fetchNotifications' and 'toast'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  104:14  warning  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components       react-refresh/only-export-components
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\AdminAlgorithmPage.tsx
+  12:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\AdminDashboardPage.tsx
+   22:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  179:75  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\AdminDisputesPage.tsx
+  30:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  31:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  44:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  50:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\AdminFinancePage.tsx
+  19:8  warning  React Hook useEffect has a missing dependency: 'loadData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\AdminProductsPage.tsx
+  22:46  error    Unexpected any. Specify a different type                                                                         @typescript-eslint/no-explicit-any
+  44:8   warning  React Hook useEffect has a missing dependency: 'loadProducts'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\AdminSettingsPage.tsx
+   11:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  129:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\AdminSubscriptionsPage.tsx
+  18:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  32:57  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\AdminUsersPage.tsx
+  19:40  error    Unexpected any. Specify a different type                                                                      @typescript-eslint/no-explicit-any
+  40:8   warning  React Hook useEffect has a missing dependency: 'loadUsers'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\ChatPage.tsx
+   53:6  warning  React Hook useEffect has a missing dependency: 'setSearchParams'. Either include it or remove the dependency array                react-hooks/exhaustive-deps
+  106:6  warning  React Hook useEffect has missing dependencies: 'loadMessages' and 'user?.id'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\CheckoutPage.tsx
+   47:8   warning  React Hook useEffect has missing dependencies: 'loadProduct', 'navigate', and 'product'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  109:25  error    Unexpected any. Specify a different type                                                                                                     @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\CreateAdPage.tsx
+  97:6  warning  React Hook useEffect has a missing dependency: 'user.status'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\DashboardPage.tsx
+   31:38  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+   57:6   warning  React Hook useEffect has a missing dependency: 'loadDashboardData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  107:13  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  137:45  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  438:46  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\EditAdPage.tsx
+   84:8   warning  React Hook useEffect has a missing dependency: 'loadData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  275:23  error    Unexpected any. Specify a different type                                                                     @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\LandingPage.tsx
+  20:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\MarketplacePage.tsx
+  68:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\ProfilePage.tsx
+   78:56  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+   79:50  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+   80:54  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+   84:46  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+   85:44  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+   90:54  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+  118:6   warning  React Hook useEffect has a missing dependency: 'loadSellerData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  145:42  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+  518:37  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+  520:35  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+  675:48  error    Unexpected any. Specify a different type                                                                           @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\SellerProfilePage.tsx
+   29:44  error    Unexpected any. Specify a different type                                                                     @typescript-eslint/no-explicit-any
+   34:8   warning  React Hook useEffect has a missing dependency: 'loadData'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  139:58  error    Unexpected any. Specify a different type                                                                     @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\pages\SupportPage.tsx
+  46:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  59:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\services\activation.ts
+  93:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\services\chat.ts
+  44:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:60  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  51:68  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  57:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  92:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\services\finance.ts
+  46:131  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\services\payment.ts
+  31:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  33:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  36:29  error  Empty block statement                     no-empty
+  42:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\src\services\storage.ts
+  11:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  32:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\Henrique\remix-of-remix-of-gamer-hub-collective\supabase\functions\create-mercadopago-preference\index.ts
+  37:41  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  71:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Ô£û 90 problems (65 errors, 25 warnings)
+
