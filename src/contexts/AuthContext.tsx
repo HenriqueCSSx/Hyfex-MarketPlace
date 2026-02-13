@@ -85,7 +85,7 @@ async function fetchProfile(su: SupabaseUser): Promise<User | null> {
           roles: su.user_metadata?.roles || ["cliente"],
           active_role: su.user_metadata?.active_role || "cliente",
           reputation: 5.0,
-          status: "active",
+          status: (su.user_metadata?.roles || []).some((r: string) => ["vendedor", "fornecedor"].includes(r)) ? "suspended" : "active",
         })
         .select()
         .single();
