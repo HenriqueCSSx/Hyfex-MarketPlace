@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -21,7 +22,7 @@ import { getCategories } from "@/services/products";
 import { createCategory, updateCategory, deleteCategory } from "@/services/admin";
 import { uploadImage } from "@/services/storage";
 import { toast } from "@/hooks/use-toast";
-import { Plus, MoreHorizontal, Pencil, Trash2, Search, Tag, ImagePlus } from "lucide-react";
+import { Plus, MoreHorizontal, Pencil, Trash2, Search, Tag, ImagePlus, ArrowLeft } from "lucide-react";
 
 interface Category {
     id: string;
@@ -34,6 +35,7 @@ interface Category {
 }
 
 export default function AdminCategoriesPage() {
+    const navigate = useNavigate();
     const [categories, setCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
@@ -147,9 +149,14 @@ export default function AdminCategoriesPage() {
             <Navbar />
             <div className="container mx-auto px-4 py-8">
                 <div className="flex items-center justify-between mb-8">
-                    <div>
-                        <h1 className="font-display text-2xl font-bold text-foreground">Gerenciar Categorias</h1>
-                        <p className="text-sm text-muted-foreground">Adicione e edite categorias de produtos</p>
+                    <div className="flex items-center gap-4">
+                        <Button variant="outline" size="icon" onClick={() => navigate("/admin")}>
+                            <ArrowLeft className="h-4 w-4" />
+                        </Button>
+                        <div>
+                            <h1 className="font-display text-2xl font-bold text-foreground">Gerenciar Categorias</h1>
+                            <p className="text-sm text-muted-foreground">Adicione e edite categorias de produtos</p>
+                        </div>
                     </div>
                     <Button onClick={() => handleOpenDialog()}>
                         <Plus className="mr-2 h-4 w-4" /> Nova Categoria
