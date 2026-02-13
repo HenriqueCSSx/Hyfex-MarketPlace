@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
 import { PartyPopper, Rocket, ShieldCheck, MessageCircle, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -13,8 +14,10 @@ interface SellerWelcomeNoticeProps {
 
 export const SellerWelcomeNotice: React.FC<SellerWelcomeNoticeProps> = ({ isOpen, onClose, userName }) => {
     const navigate = useNavigate();
+    const [agreed, setAgreed] = useState(false);
 
     const handleRelease = () => {
+        if (!agreed) return;
         onClose();
         navigate("/chat");
     };
@@ -44,11 +47,11 @@ export const SellerWelcomeNotice: React.FC<SellerWelcomeNoticeProps> = ({ isOpen
                         </DialogTitle>
 
                         <DialogDescription className="text-zinc-400 text-sm font-medium leading-relaxed">
-                            Sua jornada como vendedor ou fornecedor começa agora. Estamos felizes em ter você como parceiro da nossa comunidade.
+                            Sua conta foi criada com sucesso, mas atualmente está <strong>suspensa</strong> aguardando ativação.
                         </DialogDescription>
                     </DialogHeader>
 
-                    <div className="relative mt-8 space-y-6">
+                    <div className="relative mt-6 space-y-4">
                         <div className="glass-card rounded-2xl border-white/5 bg-white/[0.02] p-6 space-y-4">
                             <div className="flex items-start gap-4">
                                 <div className="h-8 w-8 shrink-0 rounded-lg bg-green-500/10 flex items-center justify-center border border-green-500/20">
@@ -56,27 +59,34 @@ export const SellerWelcomeNotice: React.FC<SellerWelcomeNoticeProps> = ({ isOpen
                                 </div>
                                 <div>
                                     <h4 className="text-sm font-bold text-white uppercase tracking-tight">Zero Taxa de Venda</h4>
-                                    <p className="text-xs text-zinc-500 mt-1">Diferente de outros marketplaces, a Hyfex não retém nenhuma porcentagem das suas vendas. 100% do lucro é seu.</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="h-8 w-8 shrink-0 rounded-lg bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
-                                    <ShieldCheck className="h-4 w-4 text-blue-500" />
-                                </div>
-                                <div>
-                                    <h4 className="text-sm font-bold text-white uppercase tracking-tight">Vendas Ilimitadas</h4>
-                                    <p className="text-xs text-zinc-500 mt-1">Ao ativar sua conta, você pode cadastrar quantos produtos desejar e vender sem limites de transação.</p>
+                                    <p className="text-xs text-zinc-500 mt-1">100% do lucro é seu. Não cobramos porcentagem.</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="text-center p-6 rounded-2xl bg-primary/5 border border-primary/10">
-                            <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Taxa de Manutenção</p>
-                            <div className="text-3xl font-black text-white tracking-tighter">
+                            <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">Para ativar sua conta</p>
+                            <div className="text-3xl font-black text-white tracking-tighter mb-2">
                                 R$ 19,90 <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">/ mensal</span>
                             </div>
-                            <p className="text-[10px] text-zinc-500 mt-2 font-medium">Investimento único para acesso total a todos os recursos da plataforma.</p>
+                            <p className="text-[11px] text-zinc-400 leading-relaxed">
+                                A ativação é realizada exclusivamente através do nosso suporte. Ao clicar abaixo, você será redirecionado para o chat onde receberá as instruções para pagamento e liberação imediata.
+                            </p>
+                        </div>
+
+                        <div className="flex items-center space-x-2 pt-2 px-2">
+                            <Checkbox
+                                id="terms"
+                                checked={agreed}
+                                onCheckedChange={(checked) => setAgreed(checked as boolean)}
+                                className="border-white/20 data-[state=checked]:bg-primary data-[state=checked]:text-black"
+                            />
+                            <label
+                                htmlFor="terms"
+                                className="text-xs font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-zinc-400"
+                            >
+                                Estou ciente da taxa mensal e quero prosseguir para a ativação.
+                            </label>
                         </div>
                     </div>
 
@@ -90,10 +100,11 @@ export const SellerWelcomeNotice: React.FC<SellerWelcomeNoticeProps> = ({ isOpen
                         </Button>
                         <Button
                             onClick={handleRelease}
-                            className="h-12 bg-white text-black hover:bg-zinc-200 font-bold uppercase tracking-widest text-[10px] rounded-xl px-8 transition-all shadow-xl flex-1 flex items-center justify-center gap-2 order-1 sm:order-2"
+                            disabled={!agreed}
+                            className="h-12 bg-white text-black hover:bg-zinc-200 font-bold uppercase tracking-widest text-[10px] rounded-xl px-8 transition-all shadow-xl flex-1 flex items-center justify-center gap-2 order-1 sm:order-2 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             <MessageCircle className="h-4 w-4" />
-                            Liberar Minha Conta
+                            Concordar e Ativar
                         </Button>
                     </DialogFooter>
                 </div>
