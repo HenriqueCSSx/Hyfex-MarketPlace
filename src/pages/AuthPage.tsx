@@ -44,14 +44,16 @@ const AuthPage = () => {
           setError(result.error);
           return;
         }
-        navigate("/marketplace");
+        // Force a full reload to ensure session is picked up freshly
+        window.location.href = "/marketplace";
       } else {
         const result = await login(email, password, rememberMe);
         if (result.error) {
           setError(result.error);
           return;
         }
-        navigate("/marketplace");
+        // Forcibly reload the page to ensure fresh state after registration
+        window.location.href = "/marketplace";
       }
     } catch {
       setError("Ocorreu um erro inesperado. Tente novamente.");
