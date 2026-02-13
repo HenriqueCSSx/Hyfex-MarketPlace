@@ -75,6 +75,7 @@ const ChatPage = () => {
       setMobileShowChat(true);
 
       // Subscribe to new messages for this conversation
+      // Subscribe to new messages for this conversation
       const channel = supabase
         .channel(`chat:${selectedChat}`)
         .on('postgres_changes', {
@@ -83,16 +84,24 @@ const ChatPage = () => {
           table: 'messages',
           filter: `conversation_id=eq.${selectedChat}`
         }, (payload) => {
-          const newMsg = payload.new;
-          setMessages((prev) => [...prev, {
-            id: newMsg.id,
-            senderId: newMsg.sender_id === user?.id ? "me" : "other",
-            text: newMsg.content,
-            timestamp: new Date(newMsg.created_at).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }),
-            read: false,
-            createdAt: newMsg.created_at
-          }]);
-          scrollToBottom();
+          const newMsg = payload.new as any; // Cast to any to access properties safely
+          setMessages((prev) => {
+            // Prevent duplicates
+            if (prev.some(m => m.id === newMsg.id)) return prev;
+
+            return [...prev, {
+              id: newMsg.id,
+              senderId: newMsg.sender_id === user?.id ? "me" : "other",
+              text: newMsg.content,
+              timestamp: new Date(newMsg.created_at).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }),
+              read: false,
+              createdAt: newMsg.created_at
+            }];
+          });
+
+          // Scroll to bottom after state update
+          setTimeout(scrollToBottom, 100);
+
           if (newMsg.sender_id !== user?.id) {
             markAsRead(selectedChat);
           }
