@@ -44,9 +44,7 @@ const AuthPage = () => {
           setError(result.error);
           return;
         }
-        setSuccessMessage(
-          "Conta criada com sucesso! Verifique seu email para confirmar o cadastro. Caso não encontre na caixa de entrada, verifique sua pasta de SPAM."
-        );
+        navigate("/marketplace");
       } else {
         const result = await login(email, password, rememberMe);
         if (result.error) {
