@@ -144,8 +144,34 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
     );
 
-    return () => subscription.unsubscribe();
-  }, []);
+    // 3) Listen for profile changes (Real-time ban/unban)
+    let profileSubscription: any = null;
+    if (session?.user?.id || user?.id) {
+      const targetId = session?.user?.id || user?.id;
+      profileSubscription = supabase
+        .channel(`profile:${targetId}`)
+        .on(
+          'postgres_changes',
+          {
+            event: 'UPDATE',
+            schema: 'public',
+            table: 'profiles',
+            filter: `id=eq.${targetId}`
+          },
+          (payload) => {
+            if (payload.new) {
+              setUser(prev => prev ? { ...prev, ...mapProfile(payload.new) } : mapProfile(payload.new));
+            }
+          }
+        )
+        .subscribe();
+    }
+
+    return () => {
+      subscription.unsubscribe();
+      if (profileSubscription) supabase.removeChannel(profileSubscription);
+    };
+  }, [session?.user?.id]);
 
   // ---- login ----
   const login = async (

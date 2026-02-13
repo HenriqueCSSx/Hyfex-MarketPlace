@@ -32,6 +32,7 @@ import MyQuestionsPage from "./pages/MyQuestionsPage";
 import TermsPage from "./pages/TermsPage";
 import AdminCategoriesPage from "./pages/AdminCategoriesPage";
 import AdminActivationsPage from "./pages/AdminActivationsPage";
+import { BannedModal } from "./components/BannedModal";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
     <AuthProvider>
       <NotificationProvider>
         <TooltipProvider>
+          <BannedModal />
           <Toaster />
           <Sonner />
           <BrowserRouter>
