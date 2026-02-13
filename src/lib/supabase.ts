@@ -7,7 +7,9 @@ if (!supabaseUrl || !supabaseAnonKey) {
     console.error("Missing Supabase environment variables. Check your .env file or Vercel project settings.");
 }
 
-console.log("Supabase URL present:", !!supabaseUrl);
-console.log("Supabase Key present:", !!supabaseAnonKey);
+// Use placeholders to prevent crash during module initialization
+// This allows the app to start and show a proper error message in the UI
+const safeUrl = supabaseUrl || "https://placeholder.supabase.co";
+const safeKey = supabaseAnonKey || "placeholder";
 
-export const supabase = createClient(supabaseUrl || "", supabaseAnonKey || "");
+export const supabase = createClient(safeUrl, safeKey);
