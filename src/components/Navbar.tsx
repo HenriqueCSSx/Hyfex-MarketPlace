@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-white/[0.08] bg-background/60 backdrop-blur-2xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
-        <Link to={isAuthenticated ? "/marketplace" : "/"} className="flex items-center gap-2 group">
+        <Link to="/marketplace" className="flex items-center gap-2 group">
           <div className="h-9 w-9 rounded-xl bg-primary flex items-center justify-center transition-all duration-300 group-hover:glow-orange">
             <Gamepad2 className="h-6 w-6 text-white" />
           </div>
