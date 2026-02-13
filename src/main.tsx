@@ -1,13 +1,14 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-    // Render a friendly error screen instead of crashing
-    document.body.innerHTML = `
+  // Render a friendly error screen instead of crashing
+  document.body.innerHTML = `
     <div style="
       display: flex; 
       justify-content: center; 
@@ -44,5 +45,9 @@ if (!supabaseUrl || !supabaseKey) {
     </div>
   `;
 } else {
-    createRoot(document.getElementById("root")!).render(<App />);
+  createRoot(document.getElementById("root")!).render(
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
+  );
 }
