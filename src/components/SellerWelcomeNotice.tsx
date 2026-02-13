@@ -70,7 +70,10 @@ export const SellerWelcomeNotice: React.FC<SellerWelcomeNoticeProps> = ({ isOpen
                                 R$ 19,90 <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">/ mensal</span>
                             </div>
                             <p className="text-[11px] text-zinc-400 leading-relaxed">
-                                A ativação é realizada exclusivamente através do nosso suporte. Ao clicar abaixo, você será redirecionado para o chat onde receberá as instruções para pagamento e liberação imediata.
+                                Cobramos essa taxa única porque, diferente de outros marketplaces, <strong>não cobramos comissão por venda</strong>.
+                                <br />A intenção é que você tenha <strong>100% do lucro</strong> das suas vendas.
+                                <br /><br />
+                                A ativação é realizada exclusivamente através do nosso suporte via chat.
                             </p>
                         </div>
 
