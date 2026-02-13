@@ -1,9 +1,9 @@
-
 import React from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { PartyPopper, Rocket, ShieldCheck, MessageCircle, Check, Star } from "lucide-react";
+import { PartyPopper, Rocket, ShieldCheck, MessageCircle, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface SellerWelcomeNoticeProps {
     isOpen: boolean;
@@ -12,9 +12,12 @@ interface SellerWelcomeNoticeProps {
 }
 
 export const SellerWelcomeNotice: React.FC<SellerWelcomeNoticeProps> = ({ isOpen, onClose, userName }) => {
-    const whatsappNumber = "+5571996683226";
-    const message = encodeURIComponent(`Olá! Gostaria de liberar minha conta de vendedor na Hyfex.`);
-    const whatsappUrl = `https://wa.me/${whatsappNumber.replace("+", "")}?text=${message}`;
+    const navigate = useNavigate();
+
+    const handleRelease = () => {
+        onClose();
+        navigate("/chat");
+    };
 
     return (
         <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
@@ -86,12 +89,11 @@ export const SellerWelcomeNotice: React.FC<SellerWelcomeNoticeProps> = ({ isOpen
                             Depois
                         </Button>
                         <Button
+                            onClick={handleRelease}
                             className="h-12 bg-white text-black hover:bg-zinc-200 font-bold uppercase tracking-widest text-[10px] rounded-xl px-8 transition-all shadow-xl flex-1 flex items-center justify-center gap-2 order-1 sm:order-2"
-                            asChild
                         >
-                            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                                Liberar Minha Conta
-                            </a>
+                            <MessageCircle className="h-4 w-4" />
+                            Liberar Minha Conta
                         </Button>
                     </DialogFooter>
                 </div>
